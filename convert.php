@@ -30,11 +30,10 @@
         <table class="table table-bordered table-hover">
           <thead class="thead-dark">
             <tr id="row">
-              <!-- <th>Quốc gia</th>
-              <th>Số lần hiển thị</th>
+              <th>Quốc gia</th>
+              <th>Chi phí / ch.đổi</th>
               <th>Số lần hiển thị</th>
               <th>Doanh thu</th>
-              <th></th> -->
             </tr>
           </thead>
           <tbody id="column"></tbody>
