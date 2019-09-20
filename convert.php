@@ -10,16 +10,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-  <div id="dom-target" style="display: none;">
+  <div id="dom-target1" style="display: none;">
     <?php
-      echo htmlspecialchars($target_file); 
+      echo htmlspecialchars($target_file1); 
+    ?>
+  </div>
+  <div id="dom-target2" style="display: none;">
+    <?php
+      echo htmlspecialchars($target_file2); 
+    ?>
+  </div>
+  <div id="dom-target3" style="display: none;">
+    <?php
+      echo htmlspecialchars($target_file3); 
     ?>
   </div>
     <div class="container-fluid">
       <div class="table-responsive">
         <table class="table table-bordered table-hover">
           <thead class="thead-dark">
-            <tr id="row"></tr>
+            <tr id="row">
+              <!-- <th>Quốc gia</th>
+              <th>Số lần hiển thị</th>
+              <th>Số lần hiển thị</th>
+              <th>Doanh thu</th>
+              <th></th> -->
+            </tr>
           </thead>
           <tbody id="column"></tbody>
         </table>

@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  width: 100%;
+}
+.block-file1 {
+  width: 30vw;
+  float: left;
+}
+.block-file2 {
+  width: 30vw;
+  float: left;
+}
+.block-file3 {
+  width: 30vw;
+  float: right;
+}
+.submit {
+  width: 30px;
+  margin: 0 auto;
+}
