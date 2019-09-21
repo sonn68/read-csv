@@ -12,9 +12,6 @@ const file3 = document.getElementById("dom-target3");
 const contentFile3 = file3.textContent;
 
 let column = document.getElementById("column")
-// $( "#column" ).append( `
-//   <td>${country[1].file1}</td>\n
-// `)
 setContentFile1(contentFile1, country[0].file1, country[1].file1, country[2].file1,null,appendCountry)
 setContentFile1(contentFile2, country[0].file2, country[1].file2, country[2].file2)
 setContentFile1(contentFile3, country[0].file3, country[1].file3, country[2].file3, appendTr)
@@ -38,7 +35,6 @@ function setContentFile1 (contentFile, fieldCountry, country, field, appendTr, a
     }
   }); 
 }
-{/* <td>${country[1].file1}</td>\n */}
 function appendCountry (country) {
   $( "#column" ).append( `
   <td>${country}</td>\n
