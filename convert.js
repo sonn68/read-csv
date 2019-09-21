@@ -21,11 +21,16 @@ setContentFile1(contentFile3, country[0].file3, country[1].file3, country[2].fil
 
 function setContentFile1 (contentFile, fieldCountry, country, field, appendTr, appendCountry) {
   $.get(contentFile, function(data, status){
+    if( contentFile == contentFile1){
+       var dataResult = data.substring(data.indexOf("\n") + 44)
+    } else {
+      var dataResult = data
+    }
     if(appendCountry) {
       console.log(country)
       appendCountry(country)
     }
-    const json = CSVJSON.csv2json(data, {parseNumbers: true});
+    const json = CSVJSON.csv2json(dataResult, {parseNumbers: true});
     const obj = json.filter(obj => obj[fieldCountry] == country)
     const string = `<td>${obj[0][field]}</td>\n`
     $( "#column" ).append(string)

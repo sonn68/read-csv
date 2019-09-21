@@ -6,7 +6,7 @@
   <body>
     <form action="upload.php" method="post" enctype="multipart/form-data">
       <div class="block-file1">
-        Select File 1:
+        Select File 1 Compass:
         <input type="file" name="uploadFile1" id="fileToUpload" />
         <div>
           <label>Name file 1</label>
@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="block-file2">
-        Select File 2:
+        Select File 2 Excel2.csv:
         <input type="file" name="uploadFile2" id="fileToUpload" />
         <div>
           <label>Name file 2</label>
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="block-file3">
-        Select File 3:
+        Select File 3 fb.csv:
         <input type="file" name="uploadFile3" id="fileToUpload" />
         <div>
           <label>Name file 3</label>
