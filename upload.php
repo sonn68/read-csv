@@ -2,30 +2,23 @@
 $target_dir = "upload/";
 $uploadOk = 1;
 //file 1
-$nameFile1 = $_POST['nameFile1'];
 $timeStart1 = $_POST['timeStart1'];
 $timeFinish1 = $_POST['timeFinish1'];
 $filename1 = $_FILES["uploadFile1"]["name"];
 $ext1 = pathinfo($filename1, PATHINFO_EXTENSION);
-$newfilename1 = $nameFile1.$timeStart1."--".$timeFinish1.".".$ext1;
+$newfilename1 = "file1-".$timeStart1."--".$timeFinish1.".".$ext1;
 $target_file1 = $target_dir . $newfilename1;
 
 //file 2
-$nameFile2 = $_POST['nameFile2'];
-$timeStart2 = $_POST['timeStart2'];
-$timeFinish2 = $_POST['timeFinish2'];
 $filename2 = $_FILES["uploadFile2"]["name"];
 $ext2 = pathinfo($filename2, PATHINFO_EXTENSION);
-$newfilename2 = $nameFile2.$timeStart2."--".$timeFinish2.".".$ext2;
+$newfilename2 = "file-2".$timeStart1."--".$timeFinish1.".".$ext2;
 $target_file2 = $target_dir . $newfilename2;
 
 //file 3
-$nameFile3 = $_POST['nameFile3'];
-$timeStart3 = $_POST['timeStart3'];
-$timeFinish3 = $_POST['timeFinish3'];
 $filename3 = $_FILES["uploadFile3"]["name"];
 $ext3 = pathinfo($filename3, PATHINFO_EXTENSION);
-$newfilename3 = $nameFile3.$timeStart3."--".$timeFinish3.".".$ext3;
+$newfilename3 = "file-3".$timeStart1."--".$timeFinish1.".".$ext3;
 $target_file3 = $target_dir . $newfilename3;
 
 // Check if file already exists

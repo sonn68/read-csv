@@ -10,19 +10,21 @@ const file2 = document.getElementById("dom-target2");
 const contentFile2 = file2.textContent;
 const file3 = document.getElementById("dom-target3");
 const contentFile3 = file3.textContent;
+async function setContent () {
+  await setContentFile1(contentFile1, country[0].file1, country[1].file1, country[2].file1,null,appendCountry)
+  await setContentFile1(contentFile2, country[0].file2, country[1].file2, country[2].file2)
+  await setContentFile1(contentFile3, country[0].file3, country[1].file3, country[2].file3, appendTr)
+  
+  await setContentFile1(contentFile1, country[0].file1, country[1].file1, country[2].file1,null,appendCountry)
+  await setContentFile1(contentFile2, country[0].file2, country[1].file2, country[2].file2)
+  await setContentFile1(contentFile3, country[0].file3, country[1].file3, country[2].file3)
+}
+setContent()
 
-setContentFile1(contentFile1, country[0].file1, country[1].file1, country[2].file1,null,appendCountry)
-setContentFile1(contentFile2, country[0].file2, country[1].file2, country[2].file2)
-setContentFile1(contentFile3, country[0].file3, country[1].file3, country[2].file3, appendTr)
-
-setContentFile1(contentFile1, country[0].file1, country[1].file1, country[2].file1,null,appendCountry)
-setContentFile1(contentFile2, country[0].file2, country[1].file2, country[2].file2)
-setContentFile1(contentFile3, country[0].file3, country[1].file3, country[2].file3)
-
-function setContentFile1 (contentFile, fieldCountry, country, field, appendTr, appendCountry) {
-  $.get(contentFile, function(data, status){
+async function setContentFile1 (contentFile, fieldCountry, country, field, appendTr, appendCountry) {
+  await $.get(contentFile, function(data, status){
     if( contentFile == contentFile1){
-       var dataResult = data.substring(data.indexOf("\n") + 44)
+       var dataResult = data.split('\r\n').slice(2).join('\r\n')
     } else {
       var dataResult = data
     }
