@@ -10,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
+  <!-- truyền url để jquery bắt đươc-->
   <div id="dom-target1" style="display: none;">
     <?php
       echo htmlspecialchars($target_file1); 
@@ -31,8 +32,12 @@
           <thead class="thead-dark">
             <tr id="row">
               <th>Quốc gia</th>
+              <th>Phí</th>
+              <th>Chuyển đổi</th>
               <th>Chi phí / ch.đổi</th>
-              <th>Số lần hiển thị</th>
+              <th>Tỷ lệ ch.đổi</th>
+              <th>CTR</th>
+              <th>Thu nhập ước tính (USD)</th>
               <th>Doanh thu</th>
             </tr>
           </thead>
@@ -41,6 +46,6 @@
       </div>
     </div>
     <script type="text/javascript" src="csv2json.js"></script>
-    <script type="text/javascript" src="convert.js"></script>
+    <script type="module" src="convert.js"></script>
   </body>
 </html>
