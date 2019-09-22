@@ -1,53 +1,57 @@
-const country = [
-  { file1 : "Quốc gia/Vùng lãnh thổ (Địa lý)" , file2 : "Quốc gia", file3 : "Tên quốc gia"},
-  { file1 : "Chi phí / ch.đổi" , file2 : "Số lần hiển thị", file3 : "Doanh thu"},
-  { file1 : "Hoa Kỳ" , file2 : "Hoa Kỳ", file3 : "United States"},
-  { file1 : "Việt Nam" , file2 : "Việt Nam", file3 : "Vietnam"}
-]
-const file1 = document.getElementById("dom-target1");
-const contentFile1 = file1.textContent;
-const file2 = document.getElementById("dom-target2");
-const contentFile2 = file2.textContent;
-const file3 = document.getElementById("dom-target3");
-const contentFile3 = file3.textContent;
-async function setContent () {
-  await setContentFile1(contentFile1, country[0].file1, country[2].file1, country[1].file1,null,appendCountry)
-  await setContentFile1(contentFile2, country[0].file2, country[2].file2, country[1].file2)
-  await setContentFile1(contentFile3, country[0].file3, country[2].file3, country[1].file3, appendTr)
-  
-  await setContentFile1(contentFile1, country[0].file1, country[3].file1, country[1].file1,null,appendCountry)
-  await setContentFile1(contentFile2, country[0].file2, country[3].file2, country[1].file2)
-  await setContentFile1(contentFile3, country[0].file3, country[3].file3, country[1].file3)
-}
-setContent()
+import { fieldCountry, fieldData, nameCountry } from './config.js'
 
-async function setContentFile1 (contentFile, fieldCountry, country, field, appendTr, appendCountry) {
-  await $.get(contentFile, function(data, status){
-    if( contentFile == contentFile1){
-       var dataResult = data.split('\r\n').slice(2).join('\r\n')
-    } else {
-      var dataResult = data
-    }
-    if(appendCountry) {
-      console.log(country)
-      appendCountry(country)
-    }
-    const json = CSVJSON.csv2json(dataResult, {parseNumbers: true});
-    const obj = json.filter(obj => obj[fieldCountry] == country)
-    const string = `<td>${obj[0][field]}</td>\n`
-    $( "#column" ).append(string)
-    if(appendTr) {
-      appendTr()
-    }
-  }); 
+//get url file
+const urlFile1 = $('#dom-target1')[0].textContent
+const urlFile2 = $('#dom-target2')[0].textContent
+const urlFile3 = $('#dom-target3')[0].textContent
+
+async function main(){
+  const file1 = await dataFile(urlFile1)
+  const file2 = await dataFile(urlFile2)
+  const file3 = await dataFile(urlFile3)
+  pushDataToTable(file1,file2,file3)
 }
-function appendCountry (country) {
-  $( "#column" ).append( `
-  <td>${country}</td>\n
-`)
+main()
+
+async function dataFile (urlFile) {
+  let data = await $.get(urlFile)
+  // cat 2 line dau
+  if(urlFile === urlFile1){
+    data = data.split('\r\n').slice(2).join('\r\n')
+  }
+  //convert JSON
+  data = CSVJSON.csv2json(data, {parseNumbers: true})
+  return data
 }
-function appendTr () {
+
+function pushDataToTable (file1,file2,file3) {
+  nameCountry.map(nameCountry => {
+    //Loc truong theo ten Country
+    const filterFile1 = file1.filter(value => value[fieldCountry.file1] === nameCountry.file1)
+    const filterFile2 = file2.filter(value => value[fieldCountry.file2] === nameCountry.file2)
+    const filterFile3 = file3.filter(value => value[fieldCountry.file3] === nameCountry.file3)
+
+    //Ten Quoc Gia theo file 2
+    appendColumn(nameCountry.file2)
+    fieldData.file1.map(field => {
+      //Lay ra data cac truong o file 1
+      appendColumn(filterFile1[0][field])
+    })
+
+     //Lay ra data truong o file 2
+    appendColumn(filterFile2[0][fieldData.file2])
+
+     //Lay ra data truong o file 2
+    appendColumn(filterFile3[0][fieldData.file3])
+
+    //ngat row table
+    $( "#column" ).append( `
+      <tr></tr>
+    `)
+  })
+}
+function appendColumn(data){
   $( "#column" ).append( `
-  <tr></tr>
+    <td>${data}</td>\n
   `)
 }
