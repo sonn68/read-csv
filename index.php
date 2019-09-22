@@ -9,10 +9,6 @@
         Select File 1 Compass:
         <input type="file" name="uploadFile1" id="fileToUpload" />
         <div>
-          <label>Name file 1</label>
-          <input type="text" name="nameFile1"/>
-        </div>
-        <div>
           <label>Time Start file 1</label>
           <input type="date" name="timeStart1"/>
         </div>
@@ -24,34 +20,10 @@
       <div class="block-file2">
         Select File 2 Excel2.csv:
         <input type="file" name="uploadFile2" id="fileToUpload" />
-        <div>
-          <label>Name file 2</label>
-          <input type="text" name="nameFile2"/>
-        </div>
-        <div>
-          <label>Time Start file 2</label>
-          <input type="date" name="timeStart2"/>
-        </div>
-        <div>
-          <label>Time Finish file 2</label>
-          <input type="date" name="timeFinish2"/>
-        </div>
       </div>
       <div class="block-file3">
         Select File 3 fb.csv:
         <input type="file" name="uploadFile3" id="fileToUpload" />
-        <div>
-          <label>Name file 3</label>
-          <input type="text" name="nameFile3"/>
-        </div>
-        <div>
-          <label>Time Start file 3</label>
-          <input type="date" name="timeStart3"/>
-        </div>
-        <div>
-          <label>Time Finish file 3</label>
-          <input type="date" name="timeFinish3"/>
-        </div>
       </div>
       <div class="submit">
         <input type="submit" value="Upload" name="submit" />
