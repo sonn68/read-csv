@@ -1,8 +1,8 @@
 const country = [
   { file1 : "Quốc gia/Vùng lãnh thổ (Địa lý)" , file2 : "Quốc gia", file3 : "Tên quốc gia"},
-  { file1 : "Hoa Kỳ" , file2 : "Hoa Kỳ", file3 : "United States"},
   { file1 : "Chi phí / ch.đổi" , file2 : "Số lần hiển thị", file3 : "Doanh thu"},
-  { file1 : "a4" , file2 : "b4", file3 : "c4"}
+  { file1 : "Hoa Kỳ" , file2 : "Hoa Kỳ", file3 : "United States"},
+  { file1 : "Việt Nam" , file2 : "Việt Nam", file3 : "Vietnam"}
 ]
 const file1 = document.getElementById("dom-target1");
 const contentFile1 = file1.textContent;
@@ -11,13 +11,13 @@ const contentFile2 = file2.textContent;
 const file3 = document.getElementById("dom-target3");
 const contentFile3 = file3.textContent;
 async function setContent () {
-  await setContentFile1(contentFile1, country[0].file1, country[1].file1, country[2].file1,null,appendCountry)
-  await setContentFile1(contentFile2, country[0].file2, country[1].file2, country[2].file2)
-  await setContentFile1(contentFile3, country[0].file3, country[1].file3, country[2].file3, appendTr)
+  await setContentFile1(contentFile1, country[0].file1, country[2].file1, country[1].file1,null,appendCountry)
+  await setContentFile1(contentFile2, country[0].file2, country[2].file2, country[1].file2)
+  await setContentFile1(contentFile3, country[0].file3, country[2].file3, country[1].file3, appendTr)
   
-  await setContentFile1(contentFile1, country[0].file1, country[1].file1, country[2].file1,null,appendCountry)
-  await setContentFile1(contentFile2, country[0].file2, country[1].file2, country[2].file2)
-  await setContentFile1(contentFile3, country[0].file3, country[1].file3, country[2].file3)
+  await setContentFile1(contentFile1, country[0].file1, country[3].file1, country[1].file1,null,appendCountry)
+  await setContentFile1(contentFile2, country[0].file2, country[3].file2, country[1].file2)
+  await setContentFile1(contentFile3, country[0].file3, country[3].file3, country[1].file3)
 }
 setContent()
 

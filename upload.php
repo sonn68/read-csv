@@ -12,13 +12,13 @@ $target_file1 = $target_dir . $newfilename1;
 //file 2
 $filename2 = $_FILES["uploadFile2"]["name"];
 $ext2 = pathinfo($filename2, PATHINFO_EXTENSION);
-$newfilename2 = "file-2".$timeStart1."--".$timeFinish1.".".$ext2;
+$newfilename2 = "file2-".$timeStart1."--".$timeFinish1.".".$ext2;
 $target_file2 = $target_dir . $newfilename2;
 
 //file 3
 $filename3 = $_FILES["uploadFile3"]["name"];
 $ext3 = pathinfo($filename3, PATHINFO_EXTENSION);
-$newfilename3 = "file-3".$timeStart1."--".$timeFinish1.".".$ext3;
+$newfilename3 = "file3-".$timeStart1."--".$timeFinish1.".".$ext3;
 $target_file3 = $target_dir . $newfilename3;
 
 // Check if file already exists
