@@ -2,23 +2,24 @@
 $target_dir = "upload/";
 $uploadOk = 1;
 //file 1
-$timeStart1 = $_POST['timeStart1'];
-$timeFinish1 = $_POST['timeFinish1'];
+$timeStart = $_POST['timeStart'];
+$timeFinish = $_POST['timeFinish'];
+$nameFile = $_POST['nameFile'];
 $filename1 = $_FILES["uploadFile1"]["name"];
 $ext1 = pathinfo($filename1, PATHINFO_EXTENSION);
-$newfilename1 = "file1-".$timeStart1."--".$timeFinish1.".".$ext1;
+$newfilename1 = $nameFile."1-".$timeStart."--".$timeFinish.".".$ext1;
 $target_file1 = $target_dir . $newfilename1;
 
 //file 2
 $filename2 = $_FILES["uploadFile2"]["name"];
 $ext2 = pathinfo($filename2, PATHINFO_EXTENSION);
-$newfilename2 = "file2-".$timeStart1."--".$timeFinish1.".".$ext2;
+$newfilename2 = $nameFile."2-".$timeStart."--".$timeFinish.".".$ext2;
 $target_file2 = $target_dir . $newfilename2;
 
 //file 3
 $filename3 = $_FILES["uploadFile3"]["name"];
 $ext3 = pathinfo($filename3, PATHINFO_EXTENSION);
-$newfilename3 = "file3-".$timeStart1."--".$timeFinish1.".".$ext3;
+$newfilename3 = $nameFile."3-".$timeStart."--".$timeFinish.".".$ext3;
 $target_file3 = $target_dir . $newfilename3;
 
 // Check if file already exists
