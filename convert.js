@@ -17,7 +17,7 @@ async function dataFile (urlFile) {
   let data = await $.get(urlFile)
   // cat 2 line dau
   if(urlFile === urlFile1){
-    data = data.split('\r\n').slice(2).join('\r\n')
+    data = data.split('\n').slice(2).join('\n')
   }
   //convert JSON
   data = CSVJSON.csv2json(data, {parseNumbers: true})
